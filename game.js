@@ -733,7 +733,10 @@ document.addEventListener('keydown', (e) => {
     } else if (gameState === STATE_BATTLE) {
         if (battleLog) {
             if (e.key === 'z' || e.key === 'Z') {
-                if (wildPokemon.hp <= 0 || tempBattleLog === "win") {
+                // Check if we need to process the turn (Player just attacked)
+                if (battleLog.includes("You attacked")) {
+                     enemyTurn();
+                } else if (wildPokemon.hp <= 0 || tempBattleLog === "win") {
                     gameState = STATE_MAP;
                     battleLog = "";
                     tempBattleLog = "";
@@ -744,8 +747,6 @@ document.addEventListener('keydown', (e) => {
                         battleLog = ""; 
                     } else if (battleLog.includes("appeared")) {
                         battleLog = "";
-                    } else if (battleLog.includes("You attacked")) {
-                         enemyTurn();
                     } else if (battleLog.includes("escaped")) {
                         gameState = STATE_MAP;
                         battleLog = "";
