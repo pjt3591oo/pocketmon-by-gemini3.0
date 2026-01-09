@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect x="12" y="18" width="8" height="14" fill="#795548"/> <!-- Trunk -->
+  <circle cx="16" cy="14" r="12" fill="#4CAF50"/> <!-- Leaves -->
+  <circle cx="12" cy="10" r="5" fill="#81C784"/> <!-- Highlight -->
+</svg>

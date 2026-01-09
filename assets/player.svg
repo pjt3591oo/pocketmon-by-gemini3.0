@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect x="8" y="2" width="16" height="14" fill="#ffe0bd"/> <!-- Head -->
+  <rect x="8" y="2" width="16" height="6" fill="#EA4335"/> <!-- Hat -->
+  <rect x="10" y="8" width="4" height="4" fill="#000"/> <!-- Eye L -->
+  <rect x="18" y="8" width="4" height="4" fill="#000"/> <!-- Eye R -->
+  <rect x="6" y="16" width="20" height="12" fill="#2196F3"/> <!-- Shirt -->
+  <rect x="10" y="28" width="4" height="4" fill="#333"/> <!-- Leg L -->
+  <rect x="18" y="28" width="4" height="4" fill="#333"/> <!-- Leg R -->
+</svg>
