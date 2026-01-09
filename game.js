@@ -312,15 +312,16 @@ function drawPokemonList() {
         ctx.fillStyle = '#CCC';
         ctx.fillText(`Lv.${selectedMon.level}`, detailX + 20, detailY + 150);
         ctx.fillText(`HP: ${selectedMon.hp}/${selectedMon.maxHp}`, detailX + 20, detailY + 170);
-        ctx.fillText(`ATK: ${selectedMon.attack}`, detailX + 20, detailY + 190);
-        ctx.fillText(`Type: ${selectedMon.type}`, detailX + 20, detailY + 210);
+        ctx.fillText(`EXP: ${selectedMon.exp}/${selectedMon.maxExp}`, detailX + 20, detailY + 190);
+        ctx.fillText(`ATK: ${selectedMon.attack}`, detailX + 20, detailY + 210);
+        ctx.fillText(`Type: ${selectedMon.type}`, detailX + 20, detailY + 230);
         
         if (pokemonListIndex > 0) {
             ctx.fillStyle = '#4CAF50';
-            ctx.fillText("[Z] Make Active", detailX + 20, detailY + 240);
+            ctx.fillText("[Z] Make Active", detailX + 20, detailY + 260);
         } else {
              ctx.fillStyle = '#FFEB3B';
-             ctx.fillText("Currently Active", detailX + 20, detailY + 240);
+             ctx.fillText("Currently Active", detailX + 20, detailY + 260);
         }
     }
     
@@ -433,7 +434,8 @@ function draw() {
         
         ctx.fillStyle = 'black';
         ctx.font = '12px sans-serif';
-        ctx.fillText(`Lv.${player.pokemon.level} ${player.pokemon.name} | HP: ${player.pokemon.hp}/${player.pokemon.maxHp}`, 5, 15);
+        ctx.fillText(`Lv.${player.pokemon.level} ${player.pokemon.name} | HP: ${player.pokemon.hp}/${player.pokemon.maxHp} | EXP: ${player.pokemon.exp}/${player.pokemon.maxExp}`, 5, 15);
+        ctx.fillText(`Balls: ${player.inventory.pokeballs} | Potions: ${player.inventory.potions} | Caught: ${player.collection.length}`, 5, 30);
         ctx.fillText('Press [M] for Menu', 5, canvas.height - 10);
     } else if (gameState === STATE_MENU) {
         drawMap();
