@@ -490,7 +490,7 @@ function draw() {
         ctx.fillText('GAME OVER', canvas.width / 2, canvas.height / 2 - 20);
         ctx.fillStyle = '#FFF';
         ctx.font = '16px Arial';
-        ctx.fillText('Press R to Restart', canvas.width / 2, canvas.height / 2 + 30);
+        ctx.fillText('Press R to Continue', canvas.width / 2, canvas.height / 2 + 30);
         ctx.textAlign = 'left';
     }
 }
@@ -782,8 +782,18 @@ document.addEventListener('keydown', (e) => {
         }
     } else if (gameState === STATE_GAME_OVER) {
         if (e.key === 'r' || e.key === 'R') {
-            localStorage.removeItem('pocketmon_save');
-            location.reload(); 
+            // Respawn Logic
+            player.x = 1;
+            player.y = 1; // Start pos
+            
+            // Heal active pokemon
+            player.pokemon.hp = player.pokemon.maxHp;
+            
+            // Also heal collection to be kind
+            player.collection.forEach(p => p.hp = p.maxHp);
+            
+            gameState = STATE_MAP;
+            saveGame();
         }
     }
     draw();
